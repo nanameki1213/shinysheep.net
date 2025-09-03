@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import "@radix-ui/thmes/styles.css";
 
 :root {
   --background: #ffffff;
