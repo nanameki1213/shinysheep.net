@@ -1,0 +1,29 @@
+name: Deploy Strapi and Next.js to Sakura VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to VPS
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SCP_HOST }}
+          username: ${{ secrets.SCP_USERNAME }}
+          pass: ${{ secrets.SCP_PASSWORD }}
+          script: |
+            cd shinysheep.net
+            
+            git pull origin main
+
+            docker compose up --build -d
+
+            docker image prune -f
