@@ -18,7 +18,7 @@ jobs:
         with:
           host: ${{ secrets.SCP_HOST }}
           username: ${{ secrets.SCP_USERNAME }}
-          pass: ${{ secrets.SCP_PASSWORD }}
+          password: ${{ secrets.SCP_PASSWORD }}
           script: |
             cd shinysheep.net
             
