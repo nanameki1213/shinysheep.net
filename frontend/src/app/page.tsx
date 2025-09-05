@@ -15,17 +15,19 @@ async function getPosts() {
       },
     });
     const data = await res.json();
-    console.log(data)
-    const posts: Post[] = data.data;
-    console.log(posts)
-    return posts;
+    if (data.data == null) {
+      console.error('APIのエラーが発生しました：', data.error.detail)
+    } else {
+      const posts: Post[] = data.data;
+      console.log(posts)
+      return posts;
+    }
   } catch(err) {
     console.error('エラーが発生しました：', err);
   }
 }
 
 export default async function Home() {
-  console.log('Hello World!')
   const posts = await getPosts();
   if (posts == undefined) {
     console.error('記事一覧の取得に失敗しました。')
