@@ -1,5 +1,5 @@
 import { Heading, Flex, Text } from "@radix-ui/themes";
-import { Post } from "@/app/types/posts";
+import Post from "@/app/types/posts";
 
 const TOKEN = process.env.TOKEN
 const URL = process.env.API_URL 

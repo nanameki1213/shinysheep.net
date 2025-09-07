@@ -1,6 +1,6 @@
 import Category from './category'
 
-export interface Post {
+export default interface Post {
   id: number;
   Title: string;
   Published_Date: string;

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Post } from "@/app/types/posts";
+import Post from "@/app/types/posts";
 import { Heading, Flex, Card, Text, Separator } from '@radix-ui/themes'
 
 // Read-Onlyのtoken
