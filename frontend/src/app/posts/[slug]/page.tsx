@@ -1,5 +1,6 @@
 import { Heading, Flex, Text } from "@radix-ui/themes";
 import Post from "@/app/types/posts";
+import ReactMarkdown from 'react-markdown'
 
 const TOKEN = process.env.TOKEN
 const URL = process.env.API_URL 
@@ -42,7 +43,7 @@ export default async function postPage({ params }: { params: { slug: string } })
         <Text as="p" size="2" weight="light">{post.Published_Date}</Text>
         <Text as="p" size="2">Category:</Text>
       </Flex>
-      <p>{post.Content}</p>
+      <ReactMarkdown>{post.Content}</ReactMarkdown>
     </div>
   );
 }
