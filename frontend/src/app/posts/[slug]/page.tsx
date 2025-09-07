@@ -24,8 +24,8 @@ async function getPost(slug: string) {
 }
 
 export default async function postPage({ params }: { params: { slug: string } }) {
-  const slug = await params.slug
-  const post = await getPost(slug);
+  const pars = await params
+  const post = await getPost(pars.slug);
   if (post == undefined) {
     console.error('記事一覧の取得に失敗しました。')
     return (
