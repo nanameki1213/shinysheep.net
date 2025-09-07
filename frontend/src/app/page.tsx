@@ -8,7 +8,7 @@ const URL = process.env.API_URL
 
 async function getPosts() {
   try {
-    const res = await fetch(URL + '/api/posts', {
+    const res = await fetch(URL + '/api/posts?populate=*', {
       cache: 'no-store',
       headers: {
         'Authorization': 'Bearer ' + TOKEN

@@ -6,7 +6,7 @@ const URL = process.env.API_URL
 
 async function getPost(slug: string) {
   try {
-    const res = await fetch(URL + `/api/posts?filters[Slug][$eq]=${slug}`, {
+    const res = await fetch(URL + `/api/posts?filters[Slug][$eq]=${slug}&populate=*`, {
       headers: {
           'Authorization': 'Bearer ' + TOKEN
         },
