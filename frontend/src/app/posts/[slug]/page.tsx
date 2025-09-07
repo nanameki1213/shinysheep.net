@@ -39,9 +39,9 @@ export default async function postPage({ params }: { params: { slug: string } })
   return (
     <div>
       <h1>{post.Title}</h1>
-      <Flex gap="3">
+      <Flex gap="2">
         <Text as="p" size="2" weight="light">{post.Published_Date}</Text>
-        <Text as="p" size="2">Category:</Text>
+        <Text as="p" size="2">カテゴリ：{post.category.Name}</Text>
       </Flex>
       <ReactMarkdown>{post.Content}</ReactMarkdown>
     </div>
