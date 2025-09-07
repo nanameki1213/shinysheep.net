@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Post } from "@/app/types/posts";
+import Post from "@/app/types/posts";
 import { Heading, Flex, Card, Text, Separator } from '@radix-ui/themes'
 
 // Read-Onlyのtoken
@@ -8,7 +8,7 @@ const URL = process.env.API_URL
 
 async function getPosts() {
   try {
-    const res = await fetch(URL + '/api/posts', {
+    const res = await fetch(URL + '/api/posts?populate=*', {
       cache: 'no-store',
       headers: {
         'Authorization': 'Bearer ' + TOKEN
@@ -19,7 +19,6 @@ async function getPosts() {
       console.error('APIのエラーが発生しました：', data.error.detail)
     } else {
       const posts: Post[] = data.data;
-      console.log(posts)
       return posts;
     }
   } catch(err) {
