@@ -19,7 +19,6 @@ async function getPosts() {
       console.error('APIのエラーが発生しました：', data.error.detail)
     } else {
       const posts: Post[] = data.data;
-      console.log(posts)
       return posts;
     }
   } catch(err) {

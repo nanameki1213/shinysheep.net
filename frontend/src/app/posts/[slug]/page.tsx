@@ -37,7 +37,10 @@ export default async function postPage({ params }: { params: { slug: string } })
   return (
     <div>
       <h1>{post.Title}</h1>
-      <Text as="p" size="2" weight="light">{post.Published_Date}</Text>
+      <Flex gap="3">
+        <Text as="p" size="2" weight="light">{post.Published_Date}</Text>
+        <Text as="p" size="2">Category:</Text>
+      </Flex>
       <p>{post.Content}</p>
     </div>
   );
