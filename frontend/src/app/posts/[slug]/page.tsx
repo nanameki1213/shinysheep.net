@@ -1,6 +1,7 @@
 import { Heading, Flex, Text } from "@radix-ui/themes";
 import Post from "@/app/types/posts";
 import ReactMarkdown from 'react-markdown'
+import Head from 'next/head'
 
 const TOKEN = process.env.TOKEN
 const URL = process.env.API_URL 
@@ -38,6 +39,9 @@ export default async function postPage({ params }: { params: { slug: string } })
   }
   return (
     <div>
+      <Head>
+        <title>{post.Title}</title>
+      </Head>
       <h1>{post.Title}</h1>
       <Flex gap="2">
         <Text as="p" size="2" weight="light">{post.Published_Date}</Text>
