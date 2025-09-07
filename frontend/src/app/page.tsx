@@ -16,7 +16,7 @@ async function getPosts() {
     })
     const data = await res.json()
     if (data.data == null) {
-      console.error('APIのエラーが発生しました：', data.error.detail)
+      console.error('APIのエラーが発生しました：', data.error.message)
     } else {
       const posts: Post[] = data.data
       return posts
