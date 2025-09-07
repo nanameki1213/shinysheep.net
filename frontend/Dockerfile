@@ -2,6 +2,8 @@ FROM node:20-bullseye-slim AS builder
 
 WORKDIR /app
 
+RUN yarn set version berry
+
 COPY package.json yarn.lock ./
 
 RUN yarn install --immutable
