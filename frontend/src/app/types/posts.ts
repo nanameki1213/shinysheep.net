@@ -6,5 +6,5 @@ export default interface Post {
   Published_Date: string;
   Slug: string;
   Content: string
-  Category: Category
+  category: Category
 }
