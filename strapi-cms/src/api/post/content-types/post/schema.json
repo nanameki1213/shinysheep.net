@@ -35,7 +35,8 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::category.category",
-      "mappedBy": "post"
+      "mappedBy": "post",
+      "required": true
     },
     "tag": {
       "type": "relation",
