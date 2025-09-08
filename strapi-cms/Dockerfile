@@ -21,7 +21,7 @@ WORKDIR /opt/app
 COPY --from=builder /opt/app ./
 ENV PATH=/opt/node_modules/.bin:$PATH
 
-RUN chown -R node:node /opt/app
 USER node
+COPY --chown=node:node . .
 EXPOSE 1337
 CMD ["yarn", "start"]
