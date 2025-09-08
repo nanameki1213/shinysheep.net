@@ -31,7 +31,7 @@ services:
       - ./strapi-cms/config:/opt/app/config
       - ./strapi-cms/src:/opt/app/src
       - ./strapi-cms/package.json:/opt/package.json
-      - ./strapi-cms//yarn.lock:/opt/yarn.lock
+      - ./strapi-cms/yarn.lock:/opt/yarn.lock
       - ./strapi-cms/public/uploads:/opt/app/public/uploads
     ports:
       - "1337:1337"
