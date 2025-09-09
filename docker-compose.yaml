@@ -16,6 +16,7 @@ services:
       context: ./strapi-cms
     image: strapi:latest
     restart: unless-stopped
+    user: $UID:$GID
     environment:
       DATABASE_CLIENT: ${DATABASE_CLIENT}
       DATABASE_HOST: strapiDB
@@ -28,6 +29,8 @@ services:
       APP_KEYS: ${APP_KEYS}
       NODE_ENV: ${NODE_ENV}
     volumes:
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/group:/etc/group:ro
       - ./strapi-cms/config:/opt/app/config
       - ./strapi-cms/src:/opt/app/src
       - ./strapi-cms/package.json:/opt/package.json
