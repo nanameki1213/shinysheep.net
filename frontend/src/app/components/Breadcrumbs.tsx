@@ -1,6 +1,6 @@
-import NextLink from 'next/link'
-import { Flex, Text } from '@radix-ui/themes'
 import { ChevronRightIcon } from '@radix-ui/react-icons'
+import { Flex, Text } from '@radix-ui/themes'
+import NextLink from 'next/link'
 
 interface BreadcrumbItem {
     label: string

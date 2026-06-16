@@ -1,8 +1,8 @@
-import Link from 'next/link'
-import Image from 'next/image'
 import { Card, Flex, Text, Badge } from '@radix-ui/themes'
-import Post from '@/app/types/posts'
+import Image from 'next/image'
+import Link from 'next/link'
 import styles from './PostCard.module.css'
+import Post from '@/app/types/posts'
 
 interface PostCardProps {
     post: Post
