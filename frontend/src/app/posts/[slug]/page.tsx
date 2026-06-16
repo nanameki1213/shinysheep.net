@@ -3,7 +3,8 @@ import { notFound } from 'next/navigation'
 import styles from './page.module.css'
 import Breadcrumbs from '@/app/components/Breadcrumbs'
 import ShareButtons from '@/app/components/ShareButtons'
-import TableOfContents, { extractHeadings, addHeadingIds } from '@/app/components/TableOfContents'
+import TableOfContents from '@/app/components/TableOfContents'
+import { extractHeadings, addHeadingIds } from '@/app/lib/headings'
 import { fetchPosts, fetchPostById } from '@/app/lib/api'
 
 export async function generateStaticParams() {
