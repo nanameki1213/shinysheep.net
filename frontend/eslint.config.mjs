@@ -12,7 +12,7 @@ export default  [
     files: ['**/*.ts', '**/*.tsx'], // 読み込むファイル
   },
   {
-    ignores: ['**/.next/**/*'], // 無視するファイル
+    ignores: ['**/.next/**/*', '**/out/**/*'], // 無視するファイル
   },
   eslint.configs.recommended,
   pluginReactConfig,
