@@ -1,6 +1,6 @@
-import NextLink from 'next/link'
-import { Flex, Text, Container, Box } from '@radix-ui/themes'
 import { GitHubLogoIcon, TwitterLogoIcon } from '@radix-ui/react-icons'
+import { Flex, Text, Container, Box } from '@radix-ui/themes'
+import NextLink from 'next/link'
 
 export default function SiteHeader() {
     return (

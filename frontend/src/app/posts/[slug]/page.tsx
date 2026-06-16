@@ -1,10 +1,11 @@
 import { Heading, Flex, Text, Box, Grid, Badge, Separator } from '@radix-ui/themes'
-import { fetchPosts, fetchPostById } from '@/app/lib/api'
+import { notFound } from 'next/navigation'
 import styles from './page.module.css'
-import TableOfContents, { extractHeadings, addHeadingIds } from '@/app/components/TableOfContents'
 import Breadcrumbs from '@/app/components/Breadcrumbs'
 import ShareButtons from '@/app/components/ShareButtons'
-import { notFound } from 'next/navigation'
+import TableOfContents from '@/app/components/TableOfContents'
+import { extractHeadings, addHeadingIds } from '@/app/lib/headings'
+import { fetchPosts, fetchPostById } from '@/app/lib/api'
 
 export async function generateStaticParams() {
     const posts = await fetchPosts()
