@@ -1,6 +1,6 @@
 import { Flex, Heading, Separator } from '@radix-ui/themes'
-import Post from '@/app/types/posts'
 import PostCard from './PostCard'
+import Post from '@/app/types/posts'
 
 interface PostListProps {
     posts: Post[]
