@@ -1,17 +1,18 @@
-import tseslint from '@typescript-eslint/eslint-plugin';
 import eslint from '@eslint/js';
+import tseslint from '@typescript-eslint/eslint-plugin';
+import tsParser from '@typescript-eslint/parser';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import importPlugin from 'eslint-plugin-import';
-import unusedImports from 'eslint-plugin-unused-imports';
 import pluginReactConfig from 'eslint-plugin-react/configs/recommended.js';
-import tsParser from '@typescript-eslint/parser';
+import unusedImports from 'eslint-plugin-unused-imports';
+import globals from 'globals';
 
 export default  [
   {
     files: ['**/*.ts', '**/*.tsx'], // 読み込むファイル
   },
   {
-    ignores: ['**/.next/**/*'], // 無視するファイル
+    ignores: ['**/.next/**/*', '**/out/**/*'], // 無視するファイル
   },
   eslint.configs.recommended,
   pluginReactConfig,
@@ -35,6 +36,8 @@ export default  [
     languageOptions: {
       parser: tsParser,
       globals: {
+        ...globals.browser,
+        ...globals.node,
         React: "readonly",
       },
     },
