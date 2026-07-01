@@ -40,3 +40,68 @@
   background: none;
   padding: 0;
 }
+
+.content ul,
+.content ol {
+  margin: 0 0 1rem 1.5rem;
+  padding: 0;
+}
+
+.content li {
+  margin-bottom: 0.25rem;
+}
+
+.content a {
+  color: var(--violet-11);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.content blockquote {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  border-left: 3px solid var(--gray-6);
+  color: var(--gray-11);
+}
+
+.content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.content table {
+  border-collapse: collapse;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.content th,
+.content td {
+  border: 1px solid var(--gray-6);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+.content details {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--gray-6);
+  border-radius: 8px;
+  background: var(--gray-2);
+}
+
+.content details[open] {
+  padding-bottom: 1rem;
+}
+
+.content summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.25rem 0;
+  list-style-position: inside;
+}
+
+.content details > *:not(summary) {
+  margin-top: 0.75rem;
+}

@@ -3,12 +3,14 @@ import styles from './PostArticle.module.css'
 import Breadcrumbs from '@/app/components/Breadcrumbs'
 import ShareButtons from '@/app/components/ShareButtons'
 import TableOfContents from '@/app/components/TableOfContents'
+import { blocksToHtml } from '@/app/lib/content'
 import { extractHeadings, addHeadingIds } from '@/app/lib/headings'
 import Post from '@/app/types/posts'
 
 export default function PostArticle({ post }: { post: Post }) {
-  const contentWithIds = addHeadingIds(post.content)
-  const hasHeadings = extractHeadings(post.content).length > 0
+  const html = blocksToHtml(post.content)
+  const contentWithIds = addHeadingIds(html)
+  const hasHeadings = extractHeadings(html).length > 0
 
   const breadcrumbs = [...(post.category ? [{ label: post.category.name, href: '#' }] : []), { label: post.title }]
 
@@ -47,7 +49,7 @@ export default function PostArticle({ post }: { post: Post }) {
 
       {hasHeadings && (
         <Box display={{ initial: 'none', md: 'block' }}>
-          <TableOfContents content={post.content} />
+          <TableOfContents content={html} />
         </Box>
       )}
     </Grid>
